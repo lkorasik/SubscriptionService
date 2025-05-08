@@ -18,7 +18,7 @@
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="user_id" type="BIGSERIAL"/>
-            <column name="link" type="BIGSERIAL"/>
+            <column name="link" type="VARCHAR(255)"/>
         </createTable>
 
         <addForeignKeyConstraint baseTableName="subscriptions" baseColumnNames="user_id"

@@ -7,7 +7,31 @@ import jakarta.persistence.*;
 public class Subscription {
     @Id
     private long id;
+    private String link;
     @ManyToOne
-//    @JoinColumn(name = "user_id")
     private User user;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 }
