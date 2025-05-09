@@ -47,4 +47,9 @@ public class User {
         subscriptions.remove(subscription);
         subscription.setUser(null);
     }
+
+    public void deleteAllSubscriptions() {
+        subscriptions.forEach(subscription -> subscription.setUser(null));
+        subscriptions.clear();
+    }
 }

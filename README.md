@@ -13,5 +13,5 @@ docker build -t subscription_service:latest .
 Запуск контейнера с БД:
 
 ```bash
-docker-compose -f ./docker-compose-dev.yml up
+docker-compose -f ./docker-compose-dev.yml up -d
 ```

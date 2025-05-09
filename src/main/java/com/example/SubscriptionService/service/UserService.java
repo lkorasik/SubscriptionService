@@ -2,6 +2,7 @@ package com.example.SubscriptionService.service;
 
 import com.example.SubscriptionService.api.user.CreateUserRequestDto;
 import com.example.SubscriptionService.api.user.UpdateUserRequestDto;
+import com.example.SubscriptionService.data.entity.Subscription;
 import com.example.SubscriptionService.data.entity.User;
 import com.example.SubscriptionService.data.repository.UserRepository;
 import com.example.SubscriptionService.service.exception.CannotCreateUserEmptyNameException;
@@ -40,7 +41,16 @@ public class UserService {
 
         user.setName(dto.name());
 
-        //  todo: do sometyhing with subscriptions
+        if (dto.subscriptions() != null) {
+            user.deleteAllSubscriptions();
+            dto.subscriptions().forEach(link -> {
+                Subscription subscription = new Subscription();
+                subscription.setLink(link.link());
+
+                user.addSubscription(subscription);
+            });
+        }
+
         userRepository.save(user);
     }
 

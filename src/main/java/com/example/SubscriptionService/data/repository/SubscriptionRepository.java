@@ -17,7 +17,7 @@ public interface SubscriptionRepository extends JpaRepository<Subscription, Long
                     COUNT(DISTINCT s.user_id) AS user_count
                 FROM subscriptions s
                 GROUP BY s.link
-                ORDER BY user_count DESC
+                ORDER BY user_count DESC, link ASC
                 LIMIT :topLength
             )
         SELECT
