@@ -2,8 +2,10 @@ package com.example.SubscriptionService.service;
 
 import com.example.SubscriptionService.api.user.CreateUserRequestDto;
 import com.example.SubscriptionService.api.user.UpdateUserRequestDto;
-import com.example.SubscriptionService.data.User;
-import com.example.SubscriptionService.data.UserRepository;
+import com.example.SubscriptionService.data.entity.User;
+import com.example.SubscriptionService.data.repository.UserRepository;
+import com.example.SubscriptionService.service.exception.CannotCreateUserEmptyNameException;
+import com.example.SubscriptionService.service.exception.UserNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

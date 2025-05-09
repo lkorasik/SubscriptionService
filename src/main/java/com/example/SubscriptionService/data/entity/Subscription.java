@@ -1,4 +1,4 @@
-package com.example.SubscriptionService.data;
+package com.example.SubscriptionService.data.entity;
 
 import jakarta.persistence.*;
 

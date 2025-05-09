@@ -1,5 +1,6 @@
-package com.example.SubscriptionService.data;
+package com.example.SubscriptionService.data.repository;
 
+import com.example.SubscriptionService.data.entity.Subscription;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

@@ -1,6 +1,6 @@
 package com.example.SubscriptionService.api.user;
 
-import com.example.SubscriptionService.data.User;
+import com.example.SubscriptionService.data.entity.User;
 import com.example.SubscriptionService.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

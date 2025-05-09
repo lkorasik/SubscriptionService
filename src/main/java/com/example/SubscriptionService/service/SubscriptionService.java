@@ -1,10 +1,10 @@
 package com.example.SubscriptionService.service;
 
 import com.example.SubscriptionService.api.subscription.CreateSubscriptionRequestDto;
-import com.example.SubscriptionService.data.Subscription;
-import com.example.SubscriptionService.data.SubscriptionRepository;
-import com.example.SubscriptionService.data.User;
-import com.example.SubscriptionService.data.UserRepository;
+import com.example.SubscriptionService.data.entity.Subscription;
+import com.example.SubscriptionService.data.repository.SubscriptionRepository;
+import com.example.SubscriptionService.data.entity.User;
+import com.example.SubscriptionService.data.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.example.SubscriptionService.service;
+package com.example.SubscriptionService.service.exception;
 
 public class CannotCreateUserEmptyNameException extends RuntimeException {
     public CannotCreateUserEmptyNameException() {

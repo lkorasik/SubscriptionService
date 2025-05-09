@@ -1,6 +1,6 @@
 package com.example.SubscriptionService.api;
 
-import com.example.SubscriptionService.service.UserNotFoundException;
+import com.example.SubscriptionService.service.exception.UserNotFoundException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 
