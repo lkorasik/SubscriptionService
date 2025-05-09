@@ -1,7 +1,7 @@
 package com.example.SubscriptionService.service;
 
-import com.example.SubscriptionService.api.CreateUserRequestDto;
-import com.example.SubscriptionService.api.UpdateUserRequestDto;
+import com.example.SubscriptionService.api.user.CreateUserRequestDto;
+import com.example.SubscriptionService.api.user.UpdateUserRequestDto;
 import com.example.SubscriptionService.data.User;
 import com.example.SubscriptionService.data.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.example.SubscriptionService.api;
+package com.example.SubscriptionService.api.user;
 
 import java.util.List;
 

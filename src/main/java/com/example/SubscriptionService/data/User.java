@@ -3,6 +3,7 @@ package com.example.SubscriptionService.data;
 import jakarta.persistence.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @Entity
 @Table(name = "`users`")
@@ -11,7 +12,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Subscription> subscriptions;
 
     public long getId() {
@@ -36,5 +37,15 @@ public class User {
 
     public void setSubscriptions(List<Subscription> subscriptions) {
         this.subscriptions = subscriptions;
+    }
+
+    public void addSubscription(Subscription subscription) {
+        subscriptions.add(subscription);
+        subscription.setUser(this);
+    }
+
+    public void deleteSubscription(Subscription subscription) {
+        subscriptions.remove(subscription);
+        subscription.setUser(null);
     }
 }

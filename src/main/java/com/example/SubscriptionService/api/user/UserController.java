@@ -1,4 +1,4 @@
-package com.example.SubscriptionService.api;
+package com.example.SubscriptionService.api.user;
 
 import com.example.SubscriptionService.data.User;
 import com.example.SubscriptionService.service.UserService;

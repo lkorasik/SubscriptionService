@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 @Table(name = "subscriptions")
 public class Subscription {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String link;
     @ManyToOne
