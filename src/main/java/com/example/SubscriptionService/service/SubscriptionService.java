@@ -5,6 +5,7 @@ import com.example.SubscriptionService.data.entity.Subscription;
 import com.example.SubscriptionService.data.repository.SubscriptionRepository;
 import com.example.SubscriptionService.data.entity.User;
 import com.example.SubscriptionService.service.exception.IncorrectSubscriptionException;
+import com.example.SubscriptionService.service.exception.SubscriptionNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

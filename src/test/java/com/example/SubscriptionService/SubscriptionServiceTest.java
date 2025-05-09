@@ -4,7 +4,7 @@ import com.example.SubscriptionService.api.subscription.CreateSubscriptionReques
 import com.example.SubscriptionService.data.entity.Subscription;
 import com.example.SubscriptionService.data.entity.User;
 import com.example.SubscriptionService.data.repository.SubscriptionRepository;
-import com.example.SubscriptionService.service.SubscriptionNotFoundException;
+import com.example.SubscriptionService.service.exception.SubscriptionNotFoundException;
 import com.example.SubscriptionService.service.SubscriptionService;
 import com.example.SubscriptionService.service.UserService;
 import com.example.SubscriptionService.service.exception.IncorrectSubscriptionException;
