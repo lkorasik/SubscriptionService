@@ -20,8 +20,12 @@ public interface SubscriptionRepository extends JpaRepository<Subscription, Long
                 LIMIT :topLength
             )
         SELECT
-            td.link
+            td.link AS link
         FROM top_data td
     """, nativeQuery = true)
-    public List<String> getTopK(int topLength);
+    List<SubscriptionInfo> getTopK(int topLength);
+
+    interface SubscriptionInfo {
+        String getLink();
+    }
 }

@@ -46,7 +46,7 @@ public class SubscriptionService {
         subscriptionRepository.deleteById(id);
     }
 
-    public List<String> getTopSubscriptions() {
+    public List<SubscriptionRepository.SubscriptionInfo> getTopSubscriptions() {
         return subscriptionRepository.getTopK(TOP_LENGTH);
     }
 }

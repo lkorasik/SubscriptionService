@@ -35,7 +35,11 @@ public class SubscriptionController {
     }
 
     @GetMapping("/subscriptions/top")
-    public List<String> getTopSubscriptions() {
-        return subscriptionService.getTopSubscriptions();
+    public GetTopSubscriptionsResponseDto getTopSubscriptions() {
+        List<GetTopSubscriptionsEntryResponseDto> subscriptions = subscriptionService.getTopSubscriptions()
+                .stream()
+                .map(x -> new GetTopSubscriptionsEntryResponseDto(x.getLink()))
+                .toList();
+        return new GetTopSubscriptionsResponseDto(subscriptions);
     }
 }
