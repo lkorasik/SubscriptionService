@@ -1,4 +1,6 @@
-Запуск котейнера с БД и контейнера с приложением:
+# Subscription service
+
+Запуск БД и приложения:
 
 ```bash
 docker-compose up -d
@@ -10,7 +12,7 @@ docker-compose up -d
 docker build -t subscription_service:latest .
 ```
 
-Запуск контейнера с БД:
+Запуск БД:
 
 ```bash
 docker-compose -f ./docker-compose-dev.yml up -d

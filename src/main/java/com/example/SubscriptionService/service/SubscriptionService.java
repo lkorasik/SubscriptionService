@@ -4,7 +4,7 @@ import com.example.SubscriptionService.api.subscription.CreateSubscriptionReques
 import com.example.SubscriptionService.data.entity.Subscription;
 import com.example.SubscriptionService.data.repository.SubscriptionRepository;
 import com.example.SubscriptionService.data.entity.User;
-import com.example.SubscriptionService.data.repository.UserRepository;
+import com.example.SubscriptionService.service.exception.IncorrectSubscriptionException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,24 +15,22 @@ public class SubscriptionService {
     private static final int TOP_LENGTH = 3;
     private final SubscriptionRepository subscriptionRepository;
     private final UserService userService;
-    private final UserRepository userRepository;
 
     @Autowired
-    public SubscriptionService(SubscriptionRepository subscriptionRepository, UserService userService, UserRepository userRepository) {
+    public SubscriptionService(SubscriptionRepository subscriptionRepository, UserService userService) {
         this.subscriptionRepository = subscriptionRepository;
         this.userService = userService;
-        this.userRepository = userRepository;
     }
 
     public void createSubscription(long userId, CreateSubscriptionRequestDto dto) {
-        User user = userService.findUser(userId);
-
         Subscription subscription = new Subscription();
+
+        if ((dto.link() == null) || dto.link().isBlank()) {
+            throw new IncorrectSubscriptionException();
+        }
         subscription.setLink(dto.link());
 
-        user.addSubscription(subscription);
-
-        userRepository.save(user);
+        userService.addSubscription(userId, subscription);
     }
 
     public List<Subscription> getSubscriptions(long userId) {
@@ -41,7 +39,8 @@ public class SubscriptionService {
     }
 
     public void deleteSubscription(long id) {
-        Subscription subscription = subscriptionRepository.getReferenceById(id);
+        Subscription subscription = subscriptionRepository.findById(id)
+                .orElseThrow(() -> new SubscriptionNotFoundException(id));
         subscription.getUser().deleteSubscription(subscription);
         subscriptionRepository.deleteById(id);
     }
